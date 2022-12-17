@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삿뽀로 참치</title>
+    <link rel="stylesheet" href="menu1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <!-- Kakao Map API Key -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f9b84e1d7af8fa46736004208f3d58f3">
+    </script>
+
+</head>
+
+<body>
+
+    <div class="nav">
+        <ul class="left">
+            <li><a href="#"><img src="img/tunaa.png" alt=""></a></li>
+        </ul>
+        <ul class="right">
+            <li><a href="index.html">삿뽀로참치</a></li>
+            <li><a href="reservation">온라인 예약</a></li>
+            <li><a href="menu1.html">매장 위치</a></li>
+            <li><a href="menu2.html">메뉴</a></li>
+        </ul>
+    </div>
+
+
+
+
+    <div class="wrap">
+        <div class="contentWrap">
+            <div class="content">
+                반갑습니다 ! 삿뽀로 참치입니다.
+                저희는 국내에서 최초로 시작한 숙성 참치뱃살 전문점이며,
+                프리미엄급 참치뱃살만을 사용하여, 좋은 가격으로 내어드리고 있습니다.
+                특히 , 삿뽀로참치의 참다랑어 뱃살은 지중해 물타산 참다랑어의 제일 좋은 뱃살 부위인
+            </div>
+            <div class="content2">
+                참다랑어 가마뱃살(Kamatoro)만 사용하고 있습니다.
+                참다랑어 가마뱃살은 마블링이 뛰어나도 , 진한 풍미가 특징이라
+                뱃살중에서는 최고입니다. 삿뽀로 참치는 좋은 가격과 프리미엄급 뱃살의 정직한 숙성을
+                통해 고객님들에게 참치회의 정석을 보여드리고 싶습니다. 감사합니다.
+            </div>
+        </div>
+        <div class="mapWrap">
+
+            <div id="map" style="width:50%;height:350px;"></div>
+            <div class="disc">
+                <ul>
+                    <li>부산 연제구 반송로 50-13 1층</li>
+                    <li>051-868-6779</li>
+                    <li>24:00에 영업 종료</li>
+                </ul>
+            </div>
+            
+        </div>
+
+
+        <script>
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                mapOption = {
+                    center: new kakao.maps.LatLng(35.1886926, 129.0863087), // 지도의 중심좌표
+                    level: 3 // 지도의 확대 레벨
+                };
+
+            // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+            var map = new kakao.maps.Map(mapContainer, mapOption);
+
+            var positions = [{
+                title: '삿뽀로참치',
+                latlng: new kakao.maps.LatLng(35.1886926, 129.0863087)
+            }]
+
+            var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+            for (var i = 0; i < positions.length; i++) {
+
+                // 마커 이미지의 이미지 크기 입니다
+                var imageSize = new kakao.maps.Size(24, 35);
+
+                // 마커 이미지를 생성합니다    
+                var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+                // 마커를 생성합니다
+                var marker = new kakao.maps.Marker({
+                    map: map, // 마커를 표시할 지도
+                    position: positions[i].latlng, // 마커를 표시할 위치
+                    title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                    image: markerImage // 마커 이미지 
+                });
+            }
+        </script>
+    </div>
+
+</body>
+
+
+<style>
+
+    @media screen and (max-width : 1500px){
+        .nav .left{
+            display: none;
+        }
+    }
+    
+    @media screen and (max-width : 1200px){
+        .wrap{
+            width: 800px;
+        }
+    }
+
+    @media screen and (max-width : 1100px){
+        .text,.text2{
+            font-size: 65px;
+        }
+/* 
+    @media screen and (max-width : 1100px){
+    .disc{
+        right: 295px;
+    } */
+    
+        .nav .right{
+            float: none;
+            margin : auto;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+        }
+    
+        .nav .li {
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    
+  
+
+    </style>
+</html>

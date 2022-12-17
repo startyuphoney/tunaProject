@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>삿뽀로 참치</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+        <div class="nav">
+
+            <ul class="right">
+                <li><a href="index.html">삿뽀로참치</a></li>
+                <li><a href="reservation">온라인 예약</a></li>
+                <li><a href="myReservation">예약조회</a></li>
+                <li><a href="menu1.html">매장 위치</a></li>
+                <li><a href="menu2.html">메뉴</a></li>
+                <li><a href="/notice/noticeList">공지사항</a></li>
+                <li><a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}">로그인</a>
+                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}">로그아웃</a></li>
+                   <li> <a class="nav-link" sec:authorize="hasRole('ADMIN')" th:href="@{/admin}">관리</a></li>
+            </ul>
+        </div>
+
+
+
+    <div class="slick">
+        <div><img src="img/img1.jpg" alt=""></div>
+        <div><img src="img/img2.jpg" alt=""></div>
+        <div><img src="img/img3.jpg" alt=""></div>
+        <div><img src="img/img4.jpg" alt=""></div>
+    </div>
+
+    <div class="text">삿뽀로 참치 <span class="text2">연산점</span> </div>
+
+    <div class="footer">
+        <ul class="f1">
+            <li class="fh">삿뽀로 참치</li>
+            <li>삿뽀로® Draught</li>
+            <li>삿뽀로® Original</li>
+            <li>삿뽀로® Foreign Extra Stout</li>
+            <li>삿뽀로® Dublin Porter</li>
+            <li>삿뽀로® West Indies Porter</li>
+        </ul>
+        <ul class="f2">
+            <li class="fh">참치 장인 정신</li>
+            <li>삿뽀로® 양조의 예술</li>
+            <li>혁신의 정신</li>
+            <li>브레다 태너</li>
+            <li>Brewhouse 4의 생활</li>
+        </ul>
+        <ul class="f3">
+            <li class="fh">삿뽀로참치 광고</li>
+            <li>삿뽀로® 서퍼</li>
+            <li>사퍼(콩고멋쟁이들)</li>
+            <li>삿뽀로와® 길로이</li>
+        </ul>
+        <ul class="f4">
+            <li class="fh">삿뽀로 페어링/레시피</li>
+            <li>삿뽀로® 레시피</li>
+            <li>삿뽀로® 칵테일</li>
+            <li>삿뽀로® 페어링</li>
+        </ul>
+        <ul class="f5">
+            <li class="fh">변화의 개척자</li>
+            <li>생명의 물</li>
+            <li>리어리 소방관 재단</li>
+            <li>나눔의 역사</li>
+        </ul>
+    </div>
+
+        <img src="img/goroke2.png" class="curser">
+    </div>
+
+    <div class="footwrap">
+        <div class="foot">
+            <ul>
+                <li>이용약관</li>
+                <li>개인 정보 보호 및 쿠키 공지</li>
+                <li>UGC Policy</li>
+                <li>접근성</li>
+                <li>개인 정보 보호 설정</li>
+                <li>책임감 있는 음주</li>
+                <li>DrinklQ</li>
+                <li>theBar.com</li>
+                <li>FAQs</li>
+                <li>Contact Us</li>
+            </ul><br>
+            <div>
+                삿뽀로참치 글자와 관련 로고는 상표입니다. . © 삿참 & Co. 2022
+            </div>
+            <div>
+                Please do not share with anyone under the legal purchase age for alcohol.Drink Responsibly.
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slick').slick({
+                autoplay : true,
+                autoplaySpeed : 1000,
+                fade : true,
+                pauseOnFocus : false,
+                pauseOnHover : false
+            });
+        });
+
+        var img1=document.querySelector('.curser');
+        var main=document.querySelector('.slick');
+
+        main.addEventListener('mousemove',function(e){
+
+            img1.setAttribute("style","top:"+(e.clientY - 100) +"px; left:" + (e.clientX - 100)+"px");
+
+        })
+
+        // var not = document.querySelectorAll('a');
+       
+        //     for(var i=0;i<not.length;i++){
+        //         not[i].addEventListener('click',function(){
+        //            alert('개발중입니다');
+        //         })
+        //     }
+        
+
+        // console.log(not);
+
+        
+    </script>
+</body>
+
+
+<style>
+
+@media screen and (max-width : 1500px){
+    .nav .left{
+        display: none;
+    }
+}
+
+@media screen and (max-width : 1100px){
+    .text,.text2{
+        font-size: 65px;
+    }
+
+    .nav .right{
+        float: none;
+        margin : auto;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav .li {
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .footer .f1 li{
+        font-size: 8px;
+    }
+
+    .footer .fh{
+        font-size: 16px;
+    }
+
+    .foot{
+        font-size: 8px;
+    }
+}
+
+
+
+</style>
+
+</html>

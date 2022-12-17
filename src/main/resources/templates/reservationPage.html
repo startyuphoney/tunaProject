@@ -1,0 +1,30 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+<button class="btn btn-primary" type="button" onclick = "location.href = '/'">홈</button>
+    <div class="my-3 border-bottom">
+        <div>
+            <h4>온라인 예약</h4>
+        </div>
+    </div>
+    <form th:action="@{/reservation}" th:object="${orderListForm}" method="post">
+        <div th:replace="form_errors :: formErrorsFragment"></div>
+        <div class="mb-3">
+            <label for="reservationDate" class="form-label">희망 날짜</label>
+            <input type="date" th:field="*{reservationDate}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="reservationTime" class="form-label">희망 시간</label>
+            <input type="time" th:field="*{reservationTime}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="reservationTraffic" class="form-label">인원 수</label>
+            <input type="number" th:field="*{reservationTraffic}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="reservationComment" class="form-label">요청사항</label>
+            <input type="text" th:field="*{reservationComment}" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">제출</button>
+    </form>
+</div>
+</html>

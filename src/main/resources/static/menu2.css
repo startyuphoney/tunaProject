@@ -1,0 +1,182 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  background: black;
+  margin: 0;
+  width: 1200px;
+  height: 100%;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.scene {
+    width: 45%;
+    height: 90%;
+    margin: 5% 5% 5% 50%;
+  
+  perspective: 1000px;
+}
+
+.book {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  transform-style: preserve-3d;
+}
+
+.page {
+  cursor: pointer;
+  position: absolute;
+  color: black;
+  width: 100%;
+  height: 100%;
+
+  transition: 1.5s transform;
+  transform-style: preserve-3d;  
+  transform-origin: left center;
+}
+.front,
+.back {
+  position: absolute;
+  
+  width: 100%;
+  height: 100%;
+  /* padding: 10% 5% 5%; */
+  box-sizing: border-box;
+  
+  backface-visibility: hidden;
+  background: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#FFFFFF), to(#CCCCCC));
+  background: linear-gradient(to bottom right, #fff, #ccc);
+}
+.back {
+  transform: rotateY(180deg);
+}
+
+.page.active {
+  z-index: 1;
+}
+.page.flipped {
+  transform: rotateY(-180deg);
+}
+.page.flipped:last-of-type {
+  z-index: 1;
+}
+
+p {
+  margin: 0 0 0.1em;
+  text-indent: 1em;
+}
+
+.qr {
+  margin: 50px auto;
+  max-width: 50%;
+}
+.qr img {
+    display: block;
+}
+
+/* ------------------------- 메뉴 사진 ---------------------------- */
+
+
+.menuPan1{
+    background-image: url(img/1.PNG);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menuPan2{
+    background-image: url(img/2.PNG);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menuPan3{
+    background-image: url(img/3.PNG);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menuPan4{
+    background-image: url(img/4.PNG);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menuPan5{
+    background-image: url(img/5.PNG);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menuPan6{
+    background-image: url(img/6.PNG);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menuPan7{
+    background-image: url(img/7.PNG);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menuPan8{
+    background-image: url(img/7.PNG);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+.front{
+    /* background-image: url(img/menuPan.jpg);
+    background-size: cover; */
+}
+
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+  .scene {
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+}
+}
+
+

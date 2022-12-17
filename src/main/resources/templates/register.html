@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 70px;
+        }
+        
+        .formwrap{
+            /* text-align: center; */
+            /* margin: auto; */
+        }
+
+        form{
+            width: 200px;
+            margin:auto;
+        }
+
+        .sub{
+            font-size: 23px;
+            display: inline-block;
+            margin-bottom: 7px;
+            margin-top: 15px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <div class="formwrap">
+        <form action="/createUser" method="post">
+            <span class="sub">아이디 </span> <br><input name="id" type="text" placeholder="ddwq1112"><br>
+            <span class="sub">비밀번호 </span> <br><input name="pw" type="password" placeholder="*********"><br>
+            <span class="sub">이름</span> <br><input name="name" type="text" 
+            placeholder="김삿갓"><br>
+            <span class="sub">전화번호</span> <br><input name="mobile" type="tel" placeholder="01012345678"><br>
+            <span class="sub">완료 </span> <br><input id="go" value="제출" type="submit"><br>
+        </form>
+    </div>
+</body>
+	<script>
+	    let click;
+	    click = document.getElementById('go');
+	    click.addEventListener('click',function(event){
+	        window.alert('가입완료!');
+	    });
+	</script>
+</html>
+
+

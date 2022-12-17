@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>관리자 메뉴</title>
+    </head>
+    <body>
+        <button class="btn btn-primary" onclick = "location.href = '/'" id="goHome">홈으로</button>
+        <button class="btn btn-primary" onclick = "location.href = '/admin/userList'" id="userList">유저관리</button>
+        <button class="btn btn-primary" onclick = "location.href = '/admin/reservationList'" id="resList">예약관리</button>
+    </body>
+</div>
+</html>

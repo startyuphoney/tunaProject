@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객 목록</title>
+    <style>
+    	#form{
+			display : inline;
+		}
+    </style>
+</head>
+<div layout:fragment="content" class="container my-3">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>아아디</th>
+             <!--   <th>비밀번호</th>  -->
+                <th>이름</th>
+                <th>전화번호</th>
+                <th>권한</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="userlist : ${userList}">
+                <td th:text="${userlist.id}"></td>
+               <!--  <td th:text="${userlist.pw}"></td> -->
+                <td th:text="${userlist.name}"></td>
+                <td th:text="${userlist.mobile}"></td>
+                <td th:text="${userlist.role}"></td>
+                <td>
+                    <form id="form" th:action="@{|/admin/roleIncrease/${userlist.id}|}" method="get">
+                        <input class="btn btn-primary" type="submit" value="등업">
+                    </form>
+                    <form id="form" th:action="@{|/admin/roleDecrease/${userlist.id}|}" method="get">
+                        <input class="btn btn-primary" type="submit" value="강등">
+                    </form>
+                    <form id="form" th:action="@{|/admin/dropUser/${userlist.id}|}" method="get">
+                        <input class="btn btn-primary" type="submit" value="유저삭제">
+                    </form>
+                </td>
+            </tr>
+        <button type="button" class="btn btn-primary" th:onclick = "location.href = '/admin'">관리자 메뉴</button>
+        </tbody>
+    </table>
+</div>
+
+</html>

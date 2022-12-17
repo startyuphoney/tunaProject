@@ -1,0 +1,7 @@
+<h1 th:text="${notice.title}"></h1>
+<div th:text="${notice.content}"></div>
+
+<form th:action="@{|/comment/createComment/${notice.noticeNo}|}" th:object="${comment}" method="post">
+    <textarea th:field="*{content}" rows="15"></textarea>
+    <input type="submit" value="등록">
+</form>
